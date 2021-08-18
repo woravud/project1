@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color='primary'>
+    <ion-title>
+     <H1> ตู้บุญหิว - bunheew  </H1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-card-header>
+    
+    <ion-card-title color='secondary'>รายการสินค้า</ion-card-title>
+  </ion-card-header>
+<b></b>
+
+
+
+
+
+<ion-content padding class="ion-padding ion-text-center background " >
+  
+
+ 
+  <ion-list>
+
+   
+    <ion-list>
+      <ion-slides [options]="option" class="ion-margin-top">
+     
+        <ion-slide>
+           <ion-card>
+             <img src="" >
+           </ion-card>
+        </ion-slide>
+       
+        <ion-slide>
+         <ion-card>
+           <img src="" >
+         </ion-card>
+       </ion-slide>
+       
+       </ion-slides>
+    </ion-list>
+      
+ 
+      </ion-list>
+   
+       
+    
+       
+       <ion-content>
+       <ion-grid>
+       <ion-row>
+       
+         <ion-col size-ms='12' size-xs='4' *ngFor="let p of products">
+         <ion-card>
+         <ion-title>{{ p.name }}</ion-title>
+         
+         <ion-img  src="{{p.c}}"></ion-img>
+         </ion-card>
+
+         
+        
+       
+       
+      
+       
+    
+        
+
+     
+               <b>{{ p.price | currency: ' - ' }}  บาท</b>
+             
+         
+             <ion-button fill="clear" (click)="addToCart(p)" (click)="openCart()" (click)='showConfirm()'>
+               <ion-icon name="logo-usd" style="zoom: 1.0;">"buy"</ion-icon>
+             </ion-button>
+          
+       
+   </ion-col>
+    </ion-row>
+    </ion-grid>
+       </ion-content>
+    
+
+   
+  
+  
+</ion-content>

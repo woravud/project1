@@ -1,0 +1,64 @@
+
+<ion-header>
+  <ion-toolbar>
+ 
+    
+    <ion-title>ชำระเงิน</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+
+<ion-content [fullscreen]="true" class="background">
+
+  <ion-list>
+  <ion-header>
+  <ion-toolbar>
+    
+  </ion-toolbar>
+</ion-header>
+</ion-list>
+<br>
+
+
+ <div class="ion-padding">
+ <ion-list>
+        <ion-item *ngFor="let p of cart" class="ion-text-wrap">
+        
+          <ion-grid> 
+           <ion-img src="../../assets/QRPP.jpg"></ion-img>      
+            <ion-row>
+            
+              <ion-col size="9">
+              
+                <b>{{p.name }}    .-{{ p.amount }}</b>
+              </ion-col>
+              <ion-col size="3" class="ion-text-end">
+                {{p.amount * p.price | currency: 'ราคา'}}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="9">
+                Total:
+              </ion-col>
+              <ion-col size="3" class="ion-text-end">
+                {{ getTotal() | currency: 'ราคา' }}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+
+     
+  
+
+<ion-button  color="secondary" expand="block" (click)="gotoHome()" (click)="removeCartItem(p)" >
+        ยกเลิกรายการ
+      </ion-button></div>
+<ion-content>
+
+  
+</ion-content>

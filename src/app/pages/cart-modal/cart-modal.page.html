@@ -1,0 +1,62 @@
+<ion-content fullscreen>
+
+
+ 
+
+ 
+  <div class="ion-padding">
+ 
+    <ion-list>
+      <ion-item *ngFor="let p of cart" class="ion-text-wrap">
+        <ion-grid>
+          <ion-img src="{{p.c}}"></ion-img>
+          <ion-row class="ion-align-items-center">
+
+ 
+            <ion-col size="1" class="ion-align-self-center">
+              {{ p.amount }} 
+            </ion-col>
+ 
+
+ 
+            <ion-col size="2" offset="5">
+              <ion-button color="medium" fill="clear" (click)="removeCartItem(p)">
+
+                <ion-button  color="dark" expand="block" (click)="gotoHomePage()"(click)="close()" (click)="removeCartItem(p)">
+                  ยกเลิกรายการ
+                 </ion-button>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="9">
+              <b>{{ p.name }}</b>
+            </ion-col>
+            <ion-col size="3" class="ion-text-end">
+              {{ p.amount * p.price | currency:'     THB     ' }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="9">
+              Total:
+            </ion-col>
+            <ion-col size="3" class="ion-text-end">
+              {{ getTotal() | currency:'   THB   ' }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+
+ 
+    <ion-button  color="secondary" expand="full" (click)="gotoBuyPage()"(click)="close()">
+      ชำระเงิน
+    </ion-button>
+  </div>
+ 
+</ion-content>
